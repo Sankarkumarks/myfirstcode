@@ -34,5 +34,5 @@ printf """$c$b
     $r  Support YT Channel-> Aank is ME © 2022 $c https://aank.me/Youtube 
           
 $endc$enda""";
-sudo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=2  -m 8192M -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic /dev/null 2>&1
+sudo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=2  -m 8192M -machine usb=on -device usb-tablet -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic /dev/null 2>&1
 sleep 43210
